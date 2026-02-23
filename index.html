@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Floating Wetlands | Modular Floating Treatment Wetlands for Ponds &amp; Lakes</title>
   <meta name="description" content="Modular floating treatment wetlands for ponds, lakes, and stormwater systems. Reduce algae, remove nutrients, improve water quality naturally. Free sizing calculator. Shop modules or request a custom layout quote.">
@@ -937,6 +938,12 @@
       box-shadow: 0 24px 64px rgba(19, 42, 19, 0.06);
       text-align: center;
       position: relative;
+      display: block;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .calc-preview:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 72px rgba(19, 42, 19, 0.12);
     }
 
     .calc-badge {
@@ -1861,7 +1868,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
-    <div class="calc-preview">
+    <a href="https://calculator.floatingwetlands.com" class="calc-preview" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;cursor:pointer;">
       <div class="calc-badge" style="background:var(--nw-primary);color:#fff;">Live Now</div>
       <h3>Interactive Sizing Calculator</h3>
       <p>Map-based pond sizing with triangular module tessellation and instant pricing.</p>
@@ -1871,7 +1878,7 @@
         <div class="calc-dot"></div><div class="calc-dot"></div><div class="calc-dot"></div>
         <div class="calc-dot"></div><div class="calc-dot"></div><div class="calc-dot"></div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
