@@ -1,0 +1,5 @@
+# Redirect old index-v2 if anyone bookmarked it
+/index-v2.html  /  301
+
+# Calculator redirect for convenience
+/calculator  https://calculator.floatingwetlands.com  302
