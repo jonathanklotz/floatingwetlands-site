@@ -240,10 +240,12 @@
   h1, h2, h3, h4 { font-family: var(--font-display); color: var(--text-dark); line-height: 1.2; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 
+  .wrap--wide { max-width: 1200px; }
+
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid rgba(19,42,19,0.04); display: flex; align-items: center; padding: 0 32px; transition: box-shadow 0.3s; }
-  nav.scrolled { box-shadow: 0 2px 24px rgba(19,42,19,0.06); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+  .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-h); background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid rgba(19,42,19,0.04); display: flex; align-items: center; padding: 0 32px; transition: box-shadow 0.3s; }
+  .nav.scrolled { box-shadow: 0 2px 24px rgba(19,42,19,0.06); }
+  .nav .wrap--wide { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 100%; }
   .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   .nav-brand-logo { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; transition: transform 0.3s; }
   .nav-brand:hover .nav-brand-logo { transform: scale(1.05); }
@@ -367,27 +369,33 @@
   .btn svg { width: 16px; height: 16px; }
 
   /* FOOTER */
-  footer { background: var(--deep); padding: 56px 0 32px; color: rgba(194,220,194,0.5); font-size: 0.82rem; }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-  .footer-brand-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-  .footer-brand-text { max-width: 280px; line-height: 1.6; }
-  footer h4 { color: rgba(194,220,194,0.7); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-  .footer-links { list-style: none; }
-  .footer-links li { margin-bottom: 8px; }
-  .footer-links a { color: rgba(194,220,194,0.5); transition: color 0.3s; }
+  .footer { background: #0A1A0A; color: rgba(240, 237, 232, 0.4); padding: 56px 0 28px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+  .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .footer-brand-box { width: 36px; height: 36px; border-radius: 8px; background: var(--nw-primary); display: flex; align-items: center; justify-content: center; }
+  .footer-brand-box svg { width: 20px; height: 20px; }
+  .footer-brand-name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); }
+  .footer-about { font-size: 0.82rem; line-height: 1.7; max-width: 300px; }
+  .footer-about a { color: var(--mint); }
+  .footer h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240, 237, 232, 0.6); margin-bottom: 14px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-links a { color: rgba(240, 237, 232, 0.4); font-size: 0.85rem; }
   .footer-links a:hover { color: var(--mint); }
-  .footer-bottom { border-top: 1px solid rgba(194,220,194,0.08); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.75rem; }
-  .footer-bottom a { color: rgba(194,220,194,0.5); }
-  .footer-bottom a:hover { color: var(--mint); }
+  .footer-bottom { padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.04); display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; }
+  .footer-bottom a { color: rgba(240, 237, 232, 0.35); }
 
   /* RESPONSIVE */
+  @media (max-width: 968px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
   @media (max-width: 768px) {
     .nav-links { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--white); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid rgba(19,42,19,0.06); box-shadow: 0 12px 32px rgba(19,42,19,0.08); }
     .nav-links.open { display: flex; }
     .nav-toggle { display: block; }
     .page-hero { padding: 40px 0 36px; }
     .page-hero h1 { font-size: 1.6rem; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
     .faq-q { padding: 16px 18px; font-size: 0.88rem; }
     .faq-a-inner { padding: 0 18px 18px; }
   }
@@ -395,8 +403,8 @@
 </head>
 <body>
 
-<nav id="nav">
-  <div class="nav-inner">
+<nav class="nav" id="nav">
+  <div class="wrap wrap--wide">
     <a href="/" class="nav-brand">
       <img src="/images/logo-nav.jpg" alt="Floating Wetlands logo" class="nav-brand-logo" width="44" height="44">
       <div class="nav-brand-text">
@@ -759,14 +767,15 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div class="wrap">
+<footer class="footer">
+  <div class="wrap wrap--wide">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">Floating Wetlands</div>
-        <p class="footer-brand-text">
-          Science-driven floating treatment wetlands by Natural Waterscapes. Modular. Scalable. Backed by university research and 18 years of pond management experience.
-        </p>
+        <div class="footer-brand">
+          <div class="footer-brand-box"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17c0-6 4.5-11 11-11-1.5 3-2.5 6.5-2.5 11H7z" fill="#B7E4C7"/><path d="M7 17c3-1.5 5.5-1.5 8.5 0" stroke="#0F4A30" stroke-width="1.5" fill="none"/></svg></div>
+          <span class="footer-brand-name">Floating Wetlands</span>
+        </div>
+        <p class="footer-about">Exclusive North American online distributor of Atlan floating treatment wetland modules. A division of <a href="https://naturalwaterscapes.com" target="_blank" rel="noopener">Natural Waterscapes LLC</a>, pond and lake management since 2007.</p>
       </div>
       <div>
         <h4>Product</h4>
@@ -774,14 +783,14 @@
           <li><a href="/#how-it-works">How It Works</a></li>
           <li><a href="/#science">The Data</a></li>
           <li><a href="https://shop.naturalwaterscapes.com/modular-floating-island/" target="_blank" rel="noopener">Shop Modules</a></li>
-          <li><a href="https://calculator.floatingwetlands.com">Sizing Calculator</a></li>
+          <li><a href="/#calculator">Sizing Calculator</a></li>
         </ul>
       </div>
       <div>
         <h4>Research</h4>
         <ul class="footer-links">
           <li><a href="/food-chain">The Underwater Ecosystem</a></li>
-          <li><a href="/fisheries">Floating Wetlands & Fish</a></li>
+          <li><a href="/fisheries">Floating Wetlands &amp; Fish</a></li>
           <li><a href="/performance">Performance Data</a></li>
           <li><a href="https://lgpress.clemson.edu/publication/an-introduction-to-floating-wetlands-for-stormwater-ponds/" target="_blank" rel="noopener">Clemson Research</a></li>
           <li><a href="https://content.ces.ncsu.edu/installation-and-maintenance-of-floating-treatment-wetlands" target="_blank" rel="noopener">NC State Guide</a></li>
