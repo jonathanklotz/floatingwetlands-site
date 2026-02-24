@@ -2,7 +2,7 @@
 
 ## What This Project Is
 
-Static marketing site for Natural Waterscapes' floating treatment wetland product line. Four self-contained HTML pages with inline CSS/JS. No build step, no dependencies, no framework.
+Static marketing site for Natural Waterscapes' floating treatment wetland product line. Five self-contained HTML pages with inline CSS/JS. No build step, no dependencies, no framework.
 
 **Live URL:** `https://floatingwetlands.com`
 **Hosting:** Cloudflare Pages (Git integration, auto-deploy on push to `main`)
@@ -16,6 +16,7 @@ Static marketing site for Natural Waterscapes' floating treatment wetland produc
 | `food-chain.html` | `/food-chain` | Pillar page -- trophic cascade science, nutrient cycling, food chain mechanics |
 | `fisheries.html` | `/fisheries` | Pillar page -- Neal & Lloyd research, fisheries habitat, spawning substrate |
 | `performance.html` | `/performance` | Pillar page -- removal rates, sizing guidance, peer-reviewed data |
+| `faq.html` | `/faq` | FAQ -- sizing, cost, installation, maintenance, structured data (FAQPage schema) |
 
 ## Deploy
 
@@ -109,7 +110,7 @@ All scientific claims on the site are sourced from peer-reviewed literature. Do 
 ## Editing Guidelines
 
 - When editing pages, preserve the inline CSS/JS architecture. Do not extract to external files.
-- All four pages share a common nav and footer structure. If you update nav links or footer content, update all four files.
+- All five pages share a common nav and footer structure. If you update nav links or footer content, update all five files.
 - The homepage `#calculator` section links to `https://calculator.floatingwetlands.com`. Do not change this to an anchor-only link.
 - Pillar page CTA buttons also link to the calculator. Keep these consistent.
 - Do not add tracking scripts, analytics, or third-party JS without explicit approval.
@@ -119,17 +120,17 @@ All scientific claims on the site are sourced from peer-reviewed literature. Do 
 
 **Add a new pillar page:**
 1. Copy an existing pillar page as template
-2. Update nav links in ALL four (now five) files
+2. Update nav links in ALL five (now six) files
 3. Update footer links in ALL files
 4. Commit and push
 
 **Update calculator link:**
 The calculator URL is `https://calculator.floatingwetlands.com`. It appears in:
-- `index.html` -- calculator section CTA button
-- `index.html` -- footer
+- `index.html` -- calculator section CTA button + footer
 - `food-chain.html` -- CTA button + footer
 - `fisheries.html` -- CTA button + footer
 - `performance.html` -- CTA button + footer
+- `faq.html` -- CTA button + footer
 
 **Update product pricing:**
 Pricing appears on the homepage products section and in pillar page CTAs. Grep for `518` and `498.99` to find all instances.

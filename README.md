@@ -8,6 +8,7 @@ Static marketing site for the floating treatment wetland product line. Deployed 
 - **/food-chain** -- Pillar: Food Chain Science (trophic cascade, nutrient cycling)
 - **/fisheries** -- Pillar: Fisheries Management (Neal & Lloyd research, habitat)
 - **/performance** -- Pillar: Performance Data (removal rates, sizing guidance)
+- **/faq** -- FAQ (sizing, cost, installation, maintenance)
 
 ## Deploy
 
